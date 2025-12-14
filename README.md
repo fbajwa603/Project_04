@@ -76,7 +76,3 @@ docs/testing.md
 ## Demo Video
 
 
----
-
-## Author
-(Student Name)
