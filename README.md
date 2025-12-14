@@ -15,34 +15,7 @@ The project demonstrates:
 
 ---
 
-## Project Structure
 
-Project_04/
-├── src/
-│   ├── library_system.py
-│   ├── catalog.py
-│   ├── library_item.py
-│   ├── loan.py
-│   ├── user.py
-│
-├── tests/
-│   ├── test_user_unit.py
-│   ├── test_library_item_unit.py
-│   ├── test_library_system_integration.py
-│   ├── test_system_e2e.py
-│   └── test_csv_export_system.py
-│
-├── output/
-│   ├── e2e.json
-│   ├── test_state.json
-│   └── overdue_report.csv
-│
-├── docs/
-│   └── testing.md
-│
-└── README.md
-
----
 
 ## How to Run the Program
 
