@@ -2,10 +2,10 @@ from datetime import date
 from pathlib import Path
 import json, csv
 
-from src.catalog import Catalog
-from src.user import User
-from src.library_item import LibraryItem
-from src.loan import Loan
+from catalog import Catalog
+from user import User
+from library_item import LibraryItem
+from loan import Loan
 
 
 class LibrarySystem:
@@ -29,8 +29,6 @@ class LibrarySystem:
         self.loans[loan_id] = loan
         user.add_loan(loan_id)
         return loan
-
-
 
     def save_state(self, path: Path):
         path = Path(path)
@@ -64,18 +62,7 @@ class LibrarySystem:
 
         return system
 
-
-
     def export_overdue_loans_csv(self, out_path: Path, today: date) -> int:
-        """
-        Export overdue loans to a CSV file.
-
-        Columns:
-            loan_id,user_id,item_id,due_date,days_overdue
-
-        Returns:
-            Number of overdue loans written
-        """
         out_path = Path(out_path)
         out_path.parent.mkdir(parents=True, exist_ok=True)
 

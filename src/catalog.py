@@ -1,6 +1,5 @@
-
-from typing import Dict, List
-from src.library_item import LibraryItem
+from typing import Dict
+from library_item import LibraryItem
 
 
 class Catalog:

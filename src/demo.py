@@ -1,9 +1,8 @@
-
 from datetime import date
 from pathlib import Path
-from src.user import User
-from src.library_item import Book, DVD, EBook
-from src.library_system import LibrarySystem
+from user import User
+from library_item import Book, DVD, EBook
+from library_system import LibrarySystem
 
 print("=== PROJECT 4 DEMO ===")
 
