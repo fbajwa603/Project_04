@@ -1,6 +1,4 @@
-# =========================
 # catalog.py
-# =========================
 from typing import Dict
 from library_item import LibraryItem
 class Catalog:
@@ -23,9 +21,7 @@ class Catalog:
         for item in d["items"]:
             c.add_item(LibraryItem.from_dict(item))
         return c
-# =========================
 # demo.py
-# =========================
 from datetime import date
 from pathlib import Path
 from user import User
@@ -53,10 +49,7 @@ path.parent.mkdir(exist_ok=True)
 system.save_state(path)
 print("State saved")
 
-
-# =========================
 # hold.py
-# =========================
 from datetime import date
 from typing import Dict, Any
 
@@ -91,10 +84,6 @@ class Hold:
             date.fromisoformat(d["expires_on"]),
         )
 
-
-# =========================
-# library_item.py
-# =========================
 from datetime import date, timedelta
 from typing import List, Set, Dict, Any
 
@@ -146,10 +135,6 @@ class EBook(LibraryItem):
     def is_available(self) -> bool:
         return True
 
-
-# =========================
-# library_system.py
-# =========================
 from datetime import date
 from pathlib import Path
 import json, csv
@@ -240,10 +225,7 @@ class LibrarySystem:
 
         return len(overdue_loans)
 
-
-# =========================
 # loan.py
-# =========================
 from datetime import date
 from typing import Dict, Any
 
@@ -285,10 +267,7 @@ class Loan:
             date.fromisoformat(d["due"])
         )
 
-
-# =========================
 # user.py
-# =========================
 from datetime import date, timedelta
 from typing import List, Dict, Any
 
