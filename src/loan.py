@@ -1,5 +1,6 @@
 from datetime import date
 from typing import Dict, Any
+from src.library_item import LibraryItem
 
 
 class Loan:
@@ -10,17 +11,8 @@ class Loan:
         self.due = due
         self.returned = None
 
-    @property
-    def due_date(self) -> date:
-        return self.due
-
     def is_overdue(self, today: date) -> bool:
         return self.returned is None and today > self.due
-
-    def days_overdue(self, today: date) -> int:
-        if not self.is_overdue(today):
-            return 0
-        return (today - self.due).days
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -32,9 +24,4 @@ class Loan:
 
     @classmethod
     def from_dict(cls, d: Dict[str, Any]) -> "Loan":
-        return cls(
-            d["loan_id"],
-            d["user_id"],
-            d["item_id"],
-            date.fromisoformat(d["due"])
-        )
+        return cls(d["loan_id"], d["user_id"], d["item_id"], date.fromisoformat(d["due"]))
