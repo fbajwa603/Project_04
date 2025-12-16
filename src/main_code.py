@@ -1,6 +1,6 @@
 # catalog.py
-from typing import Dict
-from library_item import LibraryItem
+from typing import Dict, List
+from src.library_item import LibraryItem
 class Catalog:
     def __init__(self, name: str):
         self._name = name
@@ -24,9 +24,9 @@ class Catalog:
 # demo.py
 from datetime import date
 from pathlib import Path
-from user import User
-from library_item import Book, DVD, EBook
-from library_system import LibrarySystem
+from src.user import User
+from src.library_item import Book, DVD, EBook
+from src.library_system import LibrarySystem
 
 print("=== PROJECT 4 DEMO ===")
 
@@ -48,7 +48,6 @@ path = Path("output/state.json")
 path.parent.mkdir(exist_ok=True)
 system.save_state(path)
 print("State saved")
-
 # hold.py
 from datetime import date
 from typing import Dict, Any
@@ -83,7 +82,7 @@ class Hold:
             date.fromisoformat(d["placed_on"]),
             date.fromisoformat(d["expires_on"]),
         )
-
+#libary_item.py
 from datetime import date, timedelta
 from typing import List, Set, Dict, Any
 
@@ -134,15 +133,15 @@ class DVD(LibraryItem):
 class EBook(LibraryItem):
     def is_available(self) -> bool:
         return True
-
+#library_System.py
 from datetime import date
 from pathlib import Path
 import json, csv
 
-from catalog import Catalog
-from user import User
-from library_item import LibraryItem
-from loan import Loan
+from src.catalog import Catalog
+from src.user import User
+from src.library_item import LibraryItem
+from src.loan import Loan
 
 
 class LibrarySystem:
